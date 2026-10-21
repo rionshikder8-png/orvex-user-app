@@ -55,8 +55,10 @@ android {
 
     buildTypes {
         release {
-            // Uses the real key when key.properties exists. Otherwise falls back
-            // to the debug key so CI can still produce an installable test APK.
+            // Disable optimization temporarily to diagnose the startup issue.
+            isMinifyEnabled = false
+            isShrinkResources = false
+
             signingConfig = if (keyPropsFile.exists()) {
                 signingConfigs.getByName("release")
             } else {
