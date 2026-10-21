@@ -1,0 +1,17 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    # Strings come from the localisation maps; keep analysis strict elsewhere.
+    invalid_annotation_target: ignore
+  exclude:
+    - build/**
+    - android/**
+
+linter:
+  rules:
+    prefer_const_constructors: true
+    prefer_const_literals_to_create_immutables: true
+    avoid_print: true
+    unawaited_futures: false
+    use_build_context_synchronously: true
